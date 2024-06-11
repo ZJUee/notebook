@@ -49,14 +49,14 @@ nav:
     - typst: tool/typst.md
     - git: tool/git.md
   - zju-course:
-    - vjf1: zju-course/vjf1.md
-    - vjf2: zju-course/vjf2.md
-    - vjf2错题: zju-course/vjf错题.md
-    - 大物甲（上）: zju-course/大物甲（上）.md
-    - 大物甲（下）: zju-course/大物甲（下）.md
-    - 马原: zju-course/马原.md
+    - vjf1: zju-course/vjf/vjf1.md
+    - vjf2: zju-course/vjf/vjf2.md
+    - vjf2错题: zju-course//vjf/vjf错题.md
+    - 大物甲（上）: zju-course/大物甲/大物甲（上）.md
+    - 大物甲（下）: zju-course/大物甲/大物甲（下）.md
+    - 马原: zju-course/马原/马原.md
     - 离散数学: zju-course/离散数学.md
-    - 线代: zju-course/线代.md
+    - 线代: zju-course/线代/线代.md
   - CS-Notes:
     - HTML: CS-Notes/HTML.md
     - CSS: CS-Notes/CSS.md
