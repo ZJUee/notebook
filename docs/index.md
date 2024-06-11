@@ -1,4 +1,16 @@
-# notebook
+---
+title: NoteBook'main page
+time: 2024-06-11 14:53:00
+author: JimmyEastBrook
+tags: 
+    - introduction
+
+hide:
+    - footer
+    - feedback  
+comments: true  #默认不开启评论
+--- 
+# NoteBook简介
 
 JimmyEastBrook的笔记本，记录，学习，分享
 
@@ -18,4 +30,4 @@ JimmyEastBrook的笔记本，记录，学习，分享
 
 如果最后能取得好的绩点，那我就把我的所有资料都敲成latex和md格式的传到这个notebook中。
 
-如果没有，那我也会努力学习，争取成为一个有影响力的eeer
+如果没有，那我也会努力学习，争取成为一个乐于分享的电院er
