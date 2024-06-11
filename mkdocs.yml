@@ -46,6 +46,8 @@ nav:
   - tool: 
     - Markdown: tool/markdown.md
     - latex: tool/latex.md
+    - typst: tool/typst.md
+    - git: tool/git.md
   - zju-course:
     - vjf1: zju-course/vjf1.md
     - vjf2: zju-course/vjf2.md
@@ -66,6 +68,7 @@ nav:
   - 关于我: 
     - 作者个人简介: about.md
   - todolist: todolist.md
+  - tags: tags.md
 
 extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
