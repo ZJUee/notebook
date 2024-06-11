@@ -9,7 +9,7 @@ theme:
         name: 关闭自动模式
     #primary: blue grey
     - media: "(prefers-color-scheme: light)"
-      scheme: slate # 日间模式
+      scheme: default # 日间模式
       primary: blue  # 上方的
       accent: blue # 链接等可交互元件的高亮色
       # teal
@@ -43,15 +43,17 @@ nav:
   - NoteBook介绍: index.md
   - csdiy:
     - cs61a: csdiy/cs61a.md
-  - tool: 
-    - Markdown: tool/markdown.md
-    - latex: tool/latex.md
-    - typst: tool/typst.md
-    - git: tool/git.md
+  - Tool: 
+    - Markdown: Tool/markdown.md
+    - latex: Tool/latex.md
+    - typst: Tool/typst.md
+    - git: Tool/git.md
   - zju-course:
     - vjf1: zju-course/vjf/vjf1.md
     - vjf2: zju-course/vjf/vjf2.md
-    - vjf2错题: zju-course//vjf/vjf错题.md
+    - vjf2复习-级数: zju-course/vjf/vjf错题-级数.md
+    - vjf2复习-空间解析几何: zju-course/vjf/vjf错题-空间解析几何.md
+    - vjf2复习-多元函数极限和连续: zju-course/vjf/vjf错题-多元函数极限和连续
     - 大物甲（上）: zju-course/大物甲/大物甲（上）.md
     - 大物甲（下）: zju-course/大物甲/大物甲（下）.md
     - 马原: zju-course/马原/马原.md
@@ -167,9 +169,9 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  # - markdown.extensions.toc:
-  #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
-  #     permalink: "\ue157"
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: "\ue157"
 
 
 
@@ -219,26 +221,26 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   #     permalink: "\ue157"
 
 
-# extra_javascript:
-#   - javascripts/extra.js #自定义javascript
-#   - javascripts/mathjax.js #Latex支持
-#   - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
-#   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
-#   # - ckplayer/js/ckplayer.js #播放器配置
-#   # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js  #gitalk支持
+extra_javascript:
+  - javascripts/extra.js #自定义javascript
+  - javascripts/mathjax.js #Latex支持
+  - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
+  # - ckplayer/js/ckplayer.js #播放器配置
+  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js  #gitalk支持
 
-# extra_css:
-#   - stylesheets/extra.css # 自定义CSS
-#   - stylesheets/link.css #友链配置
-#   - stylesheets/customize.css # 搜索圆角优化
+extra_css:
+  - stylesheets/extra.css # 自定义CSS
+  - stylesheets/link.css #友链配置
+  - stylesheets/customize.css # 搜索圆角优化
 
-#   # - stylesheets/video.css #播放器可选配置
-#   # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #gitalk支持
-#   # - ckplayer/css/ckplayer.css   #播放器配置
-#   - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
-#   # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css  #分享支持
+  # - stylesheets/video.css #播放器可选配置
+  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #gitalk支持
+  # - ckplayer/css/ckplayer.css   #播放器配置
+  - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
+  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css  #分享支持
 
-#   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
-#   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
-#   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
-#   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
