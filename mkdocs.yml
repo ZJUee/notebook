@@ -47,7 +47,7 @@ nav:
     - Git教程: tool/git/introduction.md
       - 进阶使用: tool/git/进阶使用.md
         - 如何在本地管理多个github账号: tool/git/设置多个账号.md
-    - Markdown: tool/Markdown.md
+    - Markdown简介: tool/markdown.md
     - latex: tool/latex.md
     - typst: tool/typst.md
   - zju-course:
