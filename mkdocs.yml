@@ -43,11 +43,13 @@ nav:
   - NoteBook介绍: index.md
   - csdiy:
     - cs61a: csdiy/cs61a.md
-  - Tool: 
-    - Markdown: Tool/markdown.md
+  - Tool:
+    - Git教程:
+      - 进阶操作:
+        - 如何使用git给自己配置多个github账号: Tool/git/git-account.md
+    - Markdown: Tool/Markdown.md
     - latex: Tool/latex.md
     - typst: Tool/typst.md
-    - git: Tool/git.md
   - zju-course:
     - vjf1: zju-course/vjf/vjf1.md
     - vjf2: zju-course/vjf/vjf2.md
