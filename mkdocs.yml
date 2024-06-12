@@ -44,9 +44,9 @@ nav:
   - csdiy:
     - cs61a: csdiy/cs61a.md
   - Tool:
-    - Git教程: tool/git/introduction.md
+    - Git教程: 
       - 进阶使用: tool/git/进阶使用.md
-        - 如何在本地管理多个github账号: tool/git/设置多个账号.md
+      - 如何在本地管理多个github账号: tool/git/设置多个账号.md
     - Markdown简介: tool/markdown.md
     - latex: tool/latex.md
     - typst: tool/typst.md
@@ -59,6 +59,7 @@ nav:
     - 大物甲（上）: zju-course/大物甲/大物甲（上）.md
     - 大物甲（下）: zju-course/大物甲/大物甲（下）.md
     - 马原: zju-course/马原/马原.md
+    - 军事理论: zju-course/军事理论/军事理论.md
     - 离散数学: zju-course/离散数学.md
     - 线代: zju-course/线代/线代.md
   - CS-Notes:
