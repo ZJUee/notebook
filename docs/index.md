@@ -22,7 +22,8 @@ JimmyEastBrook的笔记本，记录，学习，分享
 
 感叹ee专业开源精神不如cs专业，突发奇想，一个下午读读文档，所以就有了这个notebook
 
-现在是幻想时间：重振ee荣光，我辈义不容辞！
+!!! tip "目标"
+    现在是幻想时间：重振ee荣光，我辈义不容辞！
 
 ## 我的状态
 
@@ -32,34 +33,15 @@ JimmyEastBrook的笔记本，记录，学习，分享
 
 如果没有，那我也会努力学习，争取成为一个乐于分享的电院er
 
-## 一些写博客的技巧
+## 更新日志
 
-1. 使用一些内置的css
+time|field|commit
+:-|-|:-
+24.6.11|Tool|更新markdown教程
+24.6.11|zju-course|更新vjf笔记
+24.6.12|Tool|更新本地git管理多个github账号
 
-```text
+## material参考
 
-<div class="grid cards" markdown>
--   :simple-materialformkdocs:{ .lg .middle } __Mkdocs教程__
-    ---
-
-    - [利用Mkdocs部署静态网页至GitHub pages](blog/Mkdocs/mkdocs1.md)
-    - [Mkdocs部署配置说明(mkdocs.yml)](blog/Mkdocs/mkdocs2.md)
-    - [如何给MKdocs添加友链](blog/websitebeauty/linktech.md)
-    - [网站添加Mkdocs博客](blog/Mkdocs/mkdocsblog.md)
-    - [Blogger](blog/index.md)
-</div>
-
-```
-
-效果：
-<div class="grid cards" markdown>
--   :simple-materialformkdocs:{ .lg .middle } __Mkdocs教程__
-    ---
-
-    - [利用Mkdocs部署静态网页至GitHub pages](blog/Mkdocs/mkdocs1.md)
-    - [Mkdocs部署配置说明(mkdocs.yml)](blog/Mkdocs/mkdocs2.md)
-    - [如何给MKdocs添加友链](blog/websitebeauty/linktech.md)
-    - [网站添加Mkdocs博客](blog/Mkdocs/mkdocsblog.md)
-    - [Blogger](blog/index.md)
-</div>
+- [中文文档](https://mkdoc-material.llango.com/)
 

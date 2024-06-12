@@ -1,5 +1,9 @@
 ---
 title: 如何给git配置两个不同的账户
+author: JimmyEastBrook
+date: 2024-06-12 09:00:00
+tags: 
+  - git
 ---
 
 因为我自己本来的账户是zjuee，现在觉得顶着zjuee的昵称似乎不太好，但是github这里没法改，所以我新建一个jimmyeastbrook的账户，然后想要在本地配置两个不同的账户，一个是zjuee，一个是jimmyeastbrook。这样就可以在自己开发的一些小项目中用jimmyeastbrook的账户，<s>而不是顶着zjuee的昵称丢人 😂。（bushi）</s>
