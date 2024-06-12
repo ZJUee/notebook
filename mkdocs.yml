@@ -45,10 +45,10 @@ nav:
     - cs61a: csdiy/cs61a.md
   - Tool:
     - Git教程:
-        - 如何使用git给自己配置多个github账号: Tool/git/git-account.md
-    - Markdown: Tool/Markdown.md
-    - latex: Tool/latex.md
-    - typst: Tool/typst.md
+        - 如何使用git给自己配置多个github账号: tool/git/git-account.md
+    - Markdown: tool/Markdown.md
+    - latex: tool/latex.md
+    - typst: tool/typst.md
   - zju-course:
     - vjf1: zju-course/vjf/vjf1.md
     - vjf2: zju-course/vjf/vjf2.md
