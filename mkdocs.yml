@@ -44,7 +44,7 @@ nav:
   - csdiy:
     - cs61a: csdiy/cs61a.md
   - Tool:
-    - Git教程:
+    - Git教程: tool/git/git.md
         - 如何使用git给自己配置多个github账号: tool/git/git.md
     - Markdown: tool/Markdown.md
     - latex: tool/latex.md
