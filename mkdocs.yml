@@ -1,5 +1,7 @@
 site_name: JimmyEastBrook'NoteBook
-theme: 
+theme:
+  font: 
+    text: lxgw-wenkai #字体
   name: material
   # custom_dir: docs/overrides  #主要是这一行
   palette: 
