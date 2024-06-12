@@ -45,7 +45,6 @@ nav:
     - cs61a: csdiy/cs61a.md
   - Tool:
     - Git教程:
-      - 进阶操作:
         - 如何使用git给自己配置多个github账号: Tool/git/git-account.md
     - Markdown: Tool/Markdown.md
     - latex: Tool/latex.md
