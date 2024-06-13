@@ -40,6 +40,8 @@ time|field|commit
 24.6.11|Tool|更新markdown教程
 24.6.11|zju-course|更新vjf笔记
 24.6.12|Tool|更新本地git管理多个github账号
+24.6.13|zju-course|更新军事理论期末考点
+24.6.14|zju-course|更新马原，丝绸之路艺术复习考点
 
 ## material参考
 
