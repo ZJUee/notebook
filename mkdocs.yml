@@ -61,7 +61,9 @@ nav:
     - vjf2复习-多元函数极限和连续: zju-course/vjf/vjf错题-多元函数极限和连续
     - 大物甲（上）: zju-course/大物甲/大物甲（上）.md
     - 大物甲（下）: zju-course/大物甲/大物甲（下）.md
-    - 马原: zju-course/马原/马原.md
+    - 马原: 
+      - 马原知识回顾: zju-course/马原/马原.md
+      - 考点和套路: zju-course/马原/题型.md
     - 军事理论: zju-course/军事理论/军事理论.md
     - 离散数学: zju-course/离散数学.md
     - 线代: zju-course/线代/线代.md
