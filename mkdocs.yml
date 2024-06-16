@@ -53,6 +53,7 @@ nav:
     - latex: tool/latex.md
     - typst: tool/typst.md
   - zju-course:
+    - 形策: zju-course/形策/形策.md
     - 丝绸之路艺术: zju-course/丝绸之路艺术/复习.md
     - vjf1: zju-course/vjf/vjf1.md
     - vjf2: zju-course/vjf/vjf2.md
