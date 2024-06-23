@@ -20,7 +20,7 @@ theme:
         name: 切换至夜间模式 # 鼠标悬浮提示
     - media: "(prefers-color-scheme: dark)"
       scheme: slate # 夜间模式
-      primary: black
+      primary: indigo
       accent: indigo
       # teal
       toggle:
