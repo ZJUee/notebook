@@ -70,13 +70,13 @@ nav:
     - 离散数学: zju-course/离散数学.md
     - 线代: zju-course/线代/线代.md
   - CS-Notes:
+    - Go: CS-Notes/go.md
     - HTML: CS-Notes/HTML.md
     - CSS: CS-Notes/CSS.md
     - JavaScript: CS-Notes/JavaScript.md
     - React: CS-Notes/React.md
     - C: CS-Notes/C.md
     - python: CS-Notes/python.md
-    - go: CS-Notes/go.md
   - 关于我: 
     - 作者个人简介: about.md
   - todolist: todolist/todolist.md
