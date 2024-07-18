@@ -45,6 +45,7 @@ nav:
   - NoteBook介绍: index.md
   - csdiy:
     - cs61a: csdiy/cs61a.md
+    - missing semester: csdiy/missing-semester.md
   - Tool:
     - Git教程: 
       - 进阶使用: tool/git/进阶使用.md
@@ -58,9 +59,6 @@ nav:
     - 丝绸之路艺术: zju-course/丝绸之路艺术/复习.md
     - vjf1: zju-course/vjf/vjf1.md
     - vjf2: zju-course/vjf/vjf2.md
-    - vjf2复习-级数: zju-course/vjf/vjf错题-级数.md
-    - vjf2复习-空间解析几何: zju-course/vjf/vjf错题-空间解析几何.md
-    - vjf2复习-多元函数极限和连续: zju-course/vjf/vjf错题-多元函数极限和连续
     - 大物甲（上）: zju-course/大物甲/大物甲（上）.md
     - 大物甲（下）: zju-course/大物甲/大物甲（下）.md
     - 马原: 

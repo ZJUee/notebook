@@ -1901,7 +1901,7 @@ c
 
 数组中可以装数组，切片中可以切切片，map中也可以装map
 
-## 面相对象编程
+## 面向对象编程
 
 1. Go也支持面向对象变成（oop），但是和传统的面相对象编程有区别，并不是纯粹的面相对象编程语言。所以是支持面向对象特性是比较准确的
 2. Golang没有类的概念（class）Go语言的结构体和其他编程语言的class有同等的地位，可以理解为Go语言是基于结构体来实现面向对象编程的。
@@ -2073,3 +2073,495 @@ func main() {
 ```
 
 方法的访问控制权限也是小写只能在本包内被访问
+
+如果一个类型实现了string这个方法，那么fmt.Println()默认会调用这个方法进行输出
+
+例如
+
+```go
+package main
+
+import "fmt"
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p Person) String() string {
+    return "Person{" + p.Name + "," + fmt.Sprintf("%d", p.Age) + "}"
+}
+
+func main() {
+    var p1 Person
+    p1.Name = "张三"
+    p1.Age = 20
+    fmt.Println(p1)
+}
+```
+
+- `func (p Person) String() string`给Person类型绑定一个方法，方法的名字叫String，参数是Person类型，返回值是string类型
+- `fmt.Println(p1)`调用fmt.Println()方法，默认会调用Person类型的方法进行输出
+
+输出
+
+```shell
+Person{张三,20}
+```
+
+如果不想`return`的难么长的话，可以使用`fmt.Sprintf()`函数
+
+```go
+package main
+
+import "fmt"
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p Person) String() string {
+    str:= fmt.Sprintf("Person{Name:%s,Age:%d}", p.Name, p.Age)
+    return str
+}
+
+func main() {
+    var p1 Person
+    p1.Name = "张三"
+    p1.Age = 20
+    fmt.Println(p1)
+}
+```
+
+- `fmt.Sprintf()`函数可以格式化字符串，第一个参数是格式化字符串，第二个参数是要格式化的变量
+- `fmt.Println(p1)`调用fmt.Println()方法，默认会调用Person类型的方法进行输出
+
+输出
+
+```shell
+Person{Name:张三,Age:20}
+```
+
+函数部分也可以这样写
+
+```go
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p *Person) String() string {
+    str:= fmt.Sprintf("Person{Name:%s,Age:%d}", p.Name, p.Age)
+    return str
+}
+
+func main() {
+    var p1 Person
+    p1.Name = "张三"
+    p1.Age = 20
+    fmt.Println(&p1)
+}
+```
+
+为了便于string的输出，最好就是直接带上这个string方法，用于输出结构体信息，会自动调用
+
+#### 函数和方法的区别
+
+1. 函数不需要绑定制定的数据类型的，方法需要绑定制定的数据类型
+2. 调用方法不一样，函数的调用方法是`函数名(实参列表)`，方法的调用方法是`变量名.方法名(实参列表)`
+3. 对于函数来说，参数类型是什么既要传入什么样的值对于方法来说，可以传入指针类型，接受者为指针类型，也可以传入值类型，接受者为值类型
+
+### 创建结构体时指定字段值
+
+一.按照顺序提供值
+
+```go
+package main
+import "fmt"
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    var p1 Person = Person{Name: "张三", Age: 20}
+    fmt.Println(p1)
+}
+```
+
+- `var p1 Person = Person{Name: "张三", Age: 20}`创建Person结构体的实例，并指定Name和Age的值
+- `fmt.Println(p1)`打印Person结构体的实例
+
+输出
+
+```shell
+{张三 20}
+```
+
+二.通过key:value的方式
+
+```go
+type Person struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    var p1 Person = Person{Name: "张三", Age: 20,}
+    fmt.Println(p1)
+}
+```
+
+- `var p1 Person = Person{Name: "张三", Age: 20}`创建Person结构体的实例，并指定Name和Age的值
+- `fmt.Println(p1)`打印Person结构体的实例
+
+三.想要返回结构体的指针类型
+
+```go
+func main() {
+    var p1 *Person = &Person{Name: "张三", Age: 20}
+    fmt.Println(*p1)
+}
+```
+
+- `var p1 *Person = &Person{Name: "张三", Age: 20}`创建Person结构体的实例的指针，并指定Name和Age的值
+- `fmt.Println(p1)`打印Person结构体的实例的指针
+
+### 跨包创建结构体实例
+
+```go
+package main
+
+import (
+    "fmt"
+    "go_code/project01/model"//按照文件位置导入就好了
+)
+
+func main() {
+    var p1 model.Person = model.Person{Name: "张三", Age: 20,}
+    p2 := model.NewPerson(Name:"李四",Age:20,)//这种简单省事的方法也可以
+    fmt.Println(p1)
+}
+```
+
+- `import "go_code/project01/model"`导入model包
+- `var p1 model.Person = model.Person{Name: "张三", Age: 20}`创建model包里的Person结构体的实例，并指定Name和Age的值
+- `fmt.Println(p1)`打印Person结构体的实例
+
+定义结构体的包
+
+```go
+package model
+
+type Person struct {
+    Name string
+    Age  int
+}
+```
+
+- `package model`定义model包
+- `type Person struct`定义Person结构体
+- `Name string`定义Name属性
+- `Age  int`定义Age属性
+
+结构体的首字母要大写，才能在别的包内被调用
+
+如果小写了，可以通过工厂模式来解决
+
+```go
+package model
+
+type person struct {
+    Name string
+    Age  int
+}
+
+func NewPerson(name string, age int) *Person {
+    return &person{Name: name, Age: age}
+}
+//创建一个函数，调用函数就OK了
+```
+
+- `func NewPerson(name string, age int) *person`定义一个工厂函数，返回值是Person结构体的指针
+- `return &person{Name: name, Age: age}`返回一个Person结构体的指针，并指定Name和Age的值
+
+调用
+
+```go
+package main
+
+import (
+    "fmt"
+    "go_code/project01/model"
+)
+
+func main() {
+    var p1 *model.person = model.NewPerson("张三", 20)
+    fmt.Println(*p1)
+}
+```
+
+### 封装的引入
+
+封装的概念
+
+- 封装：隐藏内部实现细节，只暴露必要的接口，外部代码只能通过接口来访问对象的属性和方法
+- 面向对象编程的封装：隐藏对象的属性和方法，只暴露必要的接口，外部代码只能通过接口来访问对象的属性和方法
+
+好处：
+
+1. 隐藏内部实现细节，提高代码的可读性和可维护性
+2. 提高代码的安全性，防止代码被随意修改
+3. 降低耦合度，提高代码的可复用性
+
+#### 封装的实现
+
+- 建议将结构体，字段属性的首字母小写（其他包无法使用）
+- 给结构体的所在包提供一个工厂模式的函数，其首字母大写（类似一个构造函数）
+- 提供一个首字母大写的Set方法（类似修改器），用于对属性判断并赋值
+- 提供一个首字母大写的Get方法（类似访问器），用于获取属性值
+- 还可以在数据内部进行数据的逻辑判断
+
+代码实现
+
+```go
+type person struct {
+    Name string
+    age  int
+}
+
+func NewPerson(name string) *person {
+    return &person{Name: name,}
+}
+
+func (p *person) SetAge(age int) {
+    if age > 0 && age < 150 {
+        p.age = age
+    } else {
+        fmt.Println("输入的年龄不正确")
+    }
+}
+
+func (p *person) GetAge() int {
+    return p.age
+}
+```
+
+- `type person struct`定义person结构体
+- `age  int`定义age属性
+- `func NewPerson(name string, age int) *person`定义一个工厂函数，返回值是person结构体的指针
+- `func (p *person) SetAge(age int)`给person结构体绑定一个修改器，用于对age属性判断并赋值
+- `func (p *person) GetAge() int`给person结构体绑定一个访问器，用于获取age属性值
+
+调用
+
+```go
+package main
+
+import (
+    "fmt"
+    "go_code/project01/model"
+)
+
+func main() {
+    p1 := model.NewPerson("张三")
+    p1.SetAge(25)
+
+    fmt.Println(p1.Name)
+    fmt.Println(p1.GetAge())
+    fmt.Println(*p1)
+}
+```
+
+- `var p1 *model.person = model.NewPerson("张三", 20)`创建person结构体的实例的指针，并指定Name和age的值
+- `p1.SetAge(25)`调用person结构体的修改器，修改age属性的值
+- `fmt.Println(p1.GetAge())`调用person结构体的访问器，获取age属性的值
+
+输出
+
+```shell
+25
+```
+
+#### 结构体的继承
+
+两个结构体之间可以进行抽取，抽取出一个共同的属性和方法，形成一种新的结构体，就是继承的思想。
+
+其他结构体只需要嵌套一个匿名的结构体就可以了，这就是继承的思想
+
+例如
+
+```go
+type Animal struct {
+    Name string
+    Age  int
+    Weight float32
+}
+
+//给animal结构体绑定一个方法
+func (a *Animal) shout() {
+    fmt.Println(a.Name, "会喊")
+}
+func (a *Animal) move() {
+    fmt.Println(a.Name, "会动")
+}
+func (a *Animal) showInfo() {
+    fmt.Printf("名字：%s,年龄：%d,体重：%.2f\n", a.Name, a.Age, a.Weight)
+}
+
+//再定义结构体cat
+type Cat struct {
+    Animal//嵌套一个匿名的结构体
+    Color string
+}
+
+//给cat结构体绑定一个方法
+func (c *Cat) meow() {
+    fmt.Println(c.Name, "会喵喵叫")
+}
+func main(){
+    cat := &Cat{
+        Animal: Animal{Name: "小花", Age: 1, Weight: 2.3},
+        Color: "花色",
+    }
+    cat.shout()//cat.Animal.shout()也可以
+    cat.move()
+    cat.showInfo()
+    cat.meow()
+}
+```
+
+继承的优点：提高代码的复用性和扩展性，减少代码的冗余度
+
+#### 继承的注意事项
+
+1. 结构体可以使用嵌套匿名结构所有的字段和方法，也就是首字母大写或者小写的字段，方法，都可以被继承
+2. 结构体字段访问可以简化
+3. 当结构体和匿名结构体有相同的字段或者方法时，编译器就会采用就近访问原则来区分。如果希望访问匿名的结构体的字段和方法，就可以通过匿名结构体来区分
+4. 结构体的嵌套层级不能太深，否则会导致编译错误
+5. 如果嵌套了多个匿名结构体，那么该结构体可以直接访问嵌套的匿名结构体的字段和方法,为了保证代码的简洁性，建议不要使用多重继承（不要嵌套多个匿名结构体）
+6. 如果嵌入的匿名结构体中有相同的字段名或者方法名，则在访问时需要通过匿名结构体类型来区分
+7. 结构体的匿名字段可以是基本数据类型
+8. 写多重继承的时候，嵌入了多重结构体，可以直接赋值
+9. 嵌入匿名结构体的指针也是可以的(取的时候用`*`就可以取出值)
+10. 结构体的字段也可以是结构体类型的
+
+    ```go
+    type D struct{
+        a ini
+        b string
+        c B
+    }
+    //传统的
+    type E struct{
+        int
+        string
+        B
+    }
+    ```
+
+### 接口的引入
+
+接口中可以定义一组方法，但是不需要实现，不需要方法体，并且接口中不能包含任何变量。
+
+```go
+type Sayhello interface{
+    //声明一个接口
+    sayHello()//方法名称
+}
+
+//接口的实现，定义一个结构体
+//中国人
+type Chinese struct {
+
+}
+
+func (person Chinense) sayHello/*方法名称*/{
+    fmt.println("你好")//实现接口的方法，进行具体的视线输出
+}
+type American struct{
+
+}
+func(person American) sayHello{
+    fmt.println("hello")
+}
+
+//定义一个函数，接收具备Sahello接口能力的变量
+func greet(s Sayhello){
+    s.sayHello()
+}
+
+func main(){
+    //创建中国人
+    c := Chinense{}
+    a := Amecican{}
+    //打招呼
+    greet(c)
+    greet(a)
+}
+```
+
+我先定义了一个interface{}接口，这个接口表示调用这个接口的都要执行以下几个函数：A,B，C
+
+然后我再定义了能执行下面这些函数的变量
+
+之后再每一个变量设定了对应A函数的A方法，B函数的B方法，C函数的C方法
+
+然后我再定义一个函数D，接收这些变量，把接口和变量缝在一块，变成可以执行的函数
+
+接口就是让某个具备接口能力的对象调用该接口
+![alt text](image.png)
+
+定义某种能力是的别的函数实现某种功能
+
+1. 接口本身不能创建实例
+2. 自定义的数据类型都可以创建接口
+
+    ```go
+    package main
+    import "fmt"
+
+    type inter interface {
+        // 定义一个接口方法say
+        say()
+        //在这里定义一种能力，不在这里实现
+    }
+
+    type A int
+    type B string
+
+    // 为A和B类型实现say方法
+    func (a A) say() {
+        fmt.Println("A say hello")
+    }
+    func (b B) say() {
+        fmt.Println("B say hello")
+    }
+
+    func main() {
+        var a A = 0 // 初始化A类型变量
+        var b B = "hello" // 初始化B类型变量
+
+        // 直接调用A和B的say方法
+        a.say() // 输出: A say hello
+        b.say() // 输出: B say hello
+
+        // 通过接口调用A和B的say方法
+        var i inter
+        i = a
+        i.say() // 输出: A say hello
+
+        i = b
+        i.say() // 输出: B say hello
+    }
+    ```
+
+3. 一个接口可以继承多个接口
+
+#### 多态
+
+多态是面向对象的特性之一，在go中通过接口来实现
+
+```go
